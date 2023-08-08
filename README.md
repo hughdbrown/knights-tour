@@ -2,7 +2,7 @@
 Demonstrate a recursive approach to finding a knight's tour, using backtracking.
 
 # Results
-A release build produces this result:
+A release build without path optimization produces this result:
 ```
 Solution found
 Length of tour: 64
@@ -17,6 +17,25 @@ Length of tour: 64
 cargo run --release  47.34s user 0.03s system 99% cpu 47.487 total
 ```
 
+A release build with the path optimization produces this result:
+```
+Solution found
+Length of tour: 64
+00 29 14 41 32 27 12 39
+15 42 31 28 13 40 35 26
+30 01 52 43 46 33 38 11
+53 16 45 48 51 36 25 34
+02 49 54 59 44 47 10 37
+17 56 19 50 63 60 07 24
+20 03 58 55 22 05 62 09
+57 18 21 04 61 08 23 06
+cargo run --release  0.06s user 0.02s system 9% cpu 0.735 total
+```
+
+Optimizaed code is about 750 times faster.
+
 # Limitations
-1. Code does not use optimal approach of trying shortest paths first
-2. Code does not attempt to find cyclical tours but only any tour, regardless of where it ends
+1. Code does not attempt to find cyclical tours but only any tour, regardless of where it ends
+
+# Optimizations
+1. Code uses optimal approach of trying shortest paths first
