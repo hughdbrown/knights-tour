@@ -16,3 +16,7 @@ Length of tour: 64
 23 20 63 56 35 44 61 54
 cargo run --release  47.34s user 0.03s system 99% cpu 47.487 total
 ```
+
+# Limitations
+1. Code does not use optimal approach of trying shortest paths first
+2. Code does not attempt to find cyclical tours but only any tour, regardless of where it ends
